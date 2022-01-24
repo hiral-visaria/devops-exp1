@@ -1,0 +1,328 @@
+/*Style.css for CSS3*/
+
+/*Box Sizing and Round Corners*/
+
+#box{
+    background: red;
+    height: 200px;
+    width: 200px;
+    color: white;
+    padding: 50px;
+    margin: 40px auto;
+    box-sizing: border-box;
+    border-radius: 50px;
+}
+
+/*CSS3 Colors*/
+
+body#colors{
+    background: rgba(25, 52, 84, 0.5);
+    color: white;
+}
+
+#colors #container{
+    width: 600px;
+    margin: 40px auto;
+    padding: 40px;
+    box-sizing: border-box;
+    background: rgba(255, 255, 255, 0.7);
+}
+
+#colors #box{
+    /*background: linear-gradient(70deg, green, yellow, purple, white);*/
+    background: radial-gradient(yellow, green, blue);
+}
+
+/*CSS3 Shadows*/
+
+#shadows #container{
+    width: 600px;
+    margin: 40px auto;
+    padding: 20px;
+    box-sizing: border-box;
+    background: #fc3;
+    box-shadow: 0px 20px 10px -15px #333; /*horizontal vertical blur sharpness color*/
+}
+
+#shadows h1{
+    color: white;
+    text-shadow: 0 2px 5px blue, 2px 0px 2px red;
+}
+
+/*CSS3 Columns*/
+
+#three-column{
+/*  These are brower prefixes:
+    
+    -webkit-column-count: 3;
+    -moz-column-count: 3;
+    -o-column-count: 3;
+    -ms-column-count: 3; */
+    
+    column-count: 3;
+    column-gap: 40px;
+    column-rule-style: dashed;
+    column-rule-width: 10px;
+    column-rule-color: #aaa;
+}
+
+/*CSS3 Animations and Tranisitions*/
+
+@keyframes box{
+    from{border-radius: 20px; background-color: red; top: 0; left: 0;}
+    to{border-radius: 100px; background-color: black; top: 100px; left: 100px;}
+}
+
+#animations #box{
+    position: relative;
+    animation-name: box;
+    animation-duration: 5s;
+    animation-timing-function: linear;
+    animation-delay: 1s;
+    animation-iteration-count: infinite;
+    animation-direction: alternate;
+    
+/*
+    Shorthand Syntax
+    animation: box 10s linear 1s 3 alternate;
+*/
+    /*animation-fill-mode: forwards; to stop the animations*/
+}
+
+#box2{
+   background: blue;
+    width: 200px;
+    height: 200px;
+    color: white;
+}
+
+#box2:hover{
+    background: red;
+    width: 300px;
+    height: 300px;
+    transition: background 10s, width 5s, height 20s;
+}
+
+/*CSS3 Buttons*/
+
+@keyframes buttonAnimations{
+    from{padding: 10px 20px; font-size: inherit;}
+    to{padding: 15px 30px;font-size: 24px;}
+}
+
+.button{
+    background: #fc3;
+    background: linear-gradient(#fc3, #f91);
+    text-decoration: none;
+    color: white;
+    padding: 10px 20px;
+    margin: 10px;
+    border-radius: 5px;
+    border: solid 1px #999;
+    text-shadow: 0 1px 2px rgba(0, 0, 0, 0.6); 
+    
+}
+
+.button:hover{
+    border-color: #555;
+    text-shadow: 0  1px 2px rgba(0, 0, 0, 0.9);
+    background: #f91;
+    background: linear-gradient(to top, #fc3, #f91);
+    animation-name: buttonAnimations;
+    animation-duration: 0.5s;
+    animation-fill-mode: forwards;
+}
+
+.button:active{
+    position: relative;
+    top: 1px;
+}
+
+.alt-button{
+    background: radial-gradient(#fc3, #f91);
+}
+
+.alt-button:hover{
+    background: radial-gradient(#f91, #fc3);
+}
+
+/*CSS3 Image-hover*/
+
+#image-hover{
+    margin: 40px;
+}
+
+.portfolio{
+    position: relative;
+    display: inline-block;
+    margin: 0 10px;
+}
+
+.portfolio h2{
+    margin-bottom: 0;
+    position: absolute;
+    bottom: 0px;
+    background: black;
+    background: rgba(0, 0, 0, 0.5);
+    color: white;
+    width: 120px;
+    height: 50px;
+    text-align: center;
+    line-height: 50px;
+    display: none;
+}
+
+.portfolio:hover h2{
+    display: block;
+}
+
+/*Media Query*/
+
+/*base styles*/
+
+#media-query h1{
+    margin-bottom: 15px;
+}
+
+#media-query #p{
+    border: solid 1px black;
+    margin-bottom: 15px;
+}
+
+#media-query #p1{
+    background: #a52a2a;
+    width: 300px;
+    height: 300px;
+}
+
+#media-query #p2{
+    background: #DEB887;
+    width: 50px;
+    height: 50px;
+}
+
+/*CSS for Larger Devices*/
+
+@media(min-width: 1200px){
+    #media-query #p1{
+        width: 80%;
+    }
+    #media-query #p2{
+        width: 150px;
+        height: 150px;
+    }
+}
+
+/*CSS for Medium Devices*/
+
+@media(min-width: 750px) and (max-width: 1199){
+    #media-query #p1{
+        width: 50%;
+    }
+    #media-query #p2{
+        width: 100px;
+        height: 100px;
+    }
+}
+
+@media print{
+    #media-query h1{0
+        font-size: 14px;
+    }
+}
+
+/*CSS For orbit.html*/
+
+/*Animations*/
+
+@keyframes stars-animations{
+    from{ opacity: 1;}
+    to{opacity: 0.2;}
+}
+
+@keyframes sun-light{
+    from{box-shadow: 0 0 50px #f5c91a;}
+    to{box-shadow: 0 0 200px #f5c91a;}
+}
+
+@keyframes spin{
+    from{transform: rotate(0);}
+    to{transform: rotate(360deg);}
+}
+
+/*Base styles*/
+
+html, body{
+    width: 100%;
+    height: 100%;
+}
+
+#universe{
+    background: black;
+    background: -webkit-radial-gradient(#ddd, #333);
+    background: -moz-radial-gradient(#ddd, #333);
+    background: -o-radial-gradient(#ddd, #333);
+    background: radial-gradient(#ddd, #333);
+}
+
+#stars{
+    width: 100%;
+    height: 100%;
+    background: url('stars.png');
+    animation: stars-animations 3s infinite alternate;
+}
+
+#sun{
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    margin-top: -75px;
+    margin-left: -75px;
+    width: 150px;
+    height: 150px;
+    background: orange;
+    background: radial-gradient(#f5c313, #ec7e08);
+    border-radius: 100%;
+    animation: sun-light 4s infinite alternate;
+}
+
+#earthOrbit{
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    margin-top: -350px;
+    margin-left: -300px;
+    width: 600px;
+    height: 700px;
+    border-radius: 100%;
+    animation: spin 30s linear infinite; 
+}
+
+#earth{
+    position: absolute;
+    top: 50%;
+    left: 0;
+    margin-top: -40px;
+    animation: spin 3s linear infinite;
+}
+
+#moonOrbit{
+    position: absolute;
+    top: 50%;
+    left: -20px;
+    margin-top: -60px;
+    width: 120px;
+    height: 120px;  
+    border-radius: 100%;
+    animation: spin 4s linear infinite;
+}
+
+#moon{
+    position: absolute;
+    width: 20px;
+    height: 20px; 
+    background: gray;
+    background: radial-gradient(#ddd, #888);
+    border-radius: 100%;
+    
+}
