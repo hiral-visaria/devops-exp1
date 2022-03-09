@@ -2,10 +2,10 @@ pipeline {
   agent any
   
   stages {
-    stage("Hello") {
+    stage("Build") {
       steps  {
-        cd /var/www
-        git pull origin master
+        sh 'cd /var/www'
+        sh 'git pull origin master'
       }
     }
   }
