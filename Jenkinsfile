@@ -4,7 +4,8 @@ pipeline {
   stages {
     stage("Hello") {
       steps  {
-        echo "Hello World"
+        cd /var/www
+        git pull origin master
       }
     }
   }
