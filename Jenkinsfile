@@ -4,9 +4,14 @@ pipeline {
   stages {
     stage("Build") {
       steps  {
-        sh 'cd /var/www/html/'
-        sh 'rm -rf devops-exp1'
-        sh 'git clone https://github.com/hiral-visaria/devops-exp1'
+        sh 'cd /var/www/html/devops-exp1'
+        sh 'git pull origin master'
+      }
+    }
+    stage("Deploy") {
+      steps  {
+        sh 'cd /var/www/html/devops-exp1'
+        sh 'git pull origin master'
       }
     }
   }
