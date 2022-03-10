@@ -5,13 +5,13 @@ pipeline {
     stage("Build") {
       steps  {
         sh 'cd /var/www/html/devops-exp1'
-        sh 'git pull origin master'
+        sh 'sudo git pull origin master'
       }
     }
     stage("Deploy") {
       steps  {
         sh 'cd /var/www/html/devops-exp1'
-        sh 'git pull origin master'
+        sh 'sudo git pull origin master'
       }
     }
   }
